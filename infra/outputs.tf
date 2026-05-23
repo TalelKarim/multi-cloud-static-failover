@@ -24,3 +24,16 @@ output "aws_cloudfront_distribution_id" {
 output "aws_cloudfront_domain_name" {
   value = module.aws_static_site.cloudfront_domain_name
 }
+
+
+output "azure_resource_group_name" {
+  value = module.azure_static_site.resource_group_name
+}
+
+output "azure_storage_account_name" {
+  value = module.azure_static_site.storage_account_name
+}
+
+output "azure_static_website_url" {
+  value = module.azure_static_site.static_website_url
+}

@@ -18,10 +18,3 @@ User → Route 53 Failover → AWS CloudFront/S3 primary or Azure Front Door/Sto
 # multi-cloud-static-failover
 
 
-
-
-
-ARM_SUBSCRIPTION_ID=d35044fb-0834-4f7d-8611-3c4aacfcf623
-ARM_TENANT_ID=94506813-9871-4526-87ca-c8cfcc5958a0
-ARM_CLIENT_ID=0caf28b3-b64a-46d5-b93f-ad9f009f98b8
-ARM_CLIENT_SECRET=W8K8Q~Q8UgAOy2kwxX1KvF21bHI-rP8x34_A1dze

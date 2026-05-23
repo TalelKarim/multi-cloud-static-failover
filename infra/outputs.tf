@@ -37,3 +37,16 @@ output "azure_storage_account_name" {
 output "azure_static_website_url" {
   value = module.azure_static_site.static_website_url
 }
+
+
+output "aws_bucket_name" {
+  value = module.aws_static_site.bucket_name
+}
+
+output "aws_cloudfront_distribution_id" {
+  value = module.aws_static_site.cloudfront_distribution_id
+}
+
+output "azure_storage_account_name" {
+  value = module.azure_static_site.storage_account_name
+}

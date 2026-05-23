@@ -37,3 +37,19 @@ output "azure_storage_account_name" {
 output "azure_static_website_url" {
   value = module.azure_static_site.static_website_url
 }
+
+output "azure_frontdoor_profile_name" {
+  value = module.azure_static_site.frontdoor_profile_name
+}
+
+output "azure_frontdoor_endpoint_name" {
+  value = module.azure_static_site.frontdoor_endpoint_name
+}
+
+output "azure_frontdoor_endpoint_host_name" {
+  value = module.azure_static_site.frontdoor_endpoint_host_name
+}
+
+output "azure_frontdoor_url" {
+  value = module.azure_static_site.frontdoor_url
+}

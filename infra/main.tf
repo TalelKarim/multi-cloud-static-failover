@@ -4,3 +4,11 @@ data "aws_route53_zone" "root" {
 }
 
 data "azurerm_client_config" "current" {}
+
+module "aws_static_site" {
+  source = "./modules/aws_static_site"
+
+  project_name = var.project_name
+  environment  = var.environment
+  tags         = local.common_tags
+}

@@ -16,5 +16,3 @@ User → Route 53 Failover → AWS CloudFront/S3 primary or Azure Front Door/Sto
 - `.github/workflows/` - CI/CD workflows
 - `docs/` - architecture and design documentation
 # multi-cloud-static-failover
-
-

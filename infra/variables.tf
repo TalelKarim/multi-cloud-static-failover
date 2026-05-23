@@ -33,9 +33,3 @@ variable "app_domain_name" {
   description = "Application FQDN."
   default     = "multi-cloud.talelkarimchebbi.com"
 }
-
-variable "azure_subscription_id" {
-  type        = string
-  description = "Azure subscription ID."
-  sensitive   = true
-}

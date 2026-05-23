@@ -7,3 +7,7 @@ output "app_domain_name" {
   description = "Application domain name."
   value       = var.app_domain_name
 }
+
+output "azure_client_id" {
+  value = data.azurerm_client_config.current.client_id
+}

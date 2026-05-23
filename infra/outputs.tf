@@ -11,3 +11,16 @@ output "app_domain_name" {
 output "azure_client_id" {
   value = data.azurerm_client_config.current.client_id
 }
+
+
+output "aws_primary_bucket_name" {
+  value = module.aws_static_site.bucket_name
+}
+
+output "aws_cloudfront_distribution_id" {
+  value = module.aws_static_site.cloudfront_distribution_id
+}
+
+output "aws_cloudfront_domain_name" {
+  value = module.aws_static_site.cloudfront_domain_name
+}

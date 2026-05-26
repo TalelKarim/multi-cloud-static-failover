@@ -11,6 +11,7 @@ cp app/index.html dist/
 cp app/script.js dist/
 cp app/styles.css dist/
 
+
 sed "s/__CLOUD_PROVIDER__/${CLOUD_PROVIDER}/g" \
   app/runtime-config.template.json \
   > dist/runtime-config.json

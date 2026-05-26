@@ -12,12 +12,17 @@ data "azurerm_client_config" "current" {}
 module "aws_static_site" {
   source = "./modules/aws_static_site"
 
-  project_name = var.project_name
-  environment  = var.environment
-  tags         = local.common_tags
+  providers = {
+    aws           = aws
+    aws.us_east_1 = aws.us_east_1
+  }
+
+  project_name    = var.project_name
+  environment     = var.environment
+  app_domain_name = var.app_domain_name
+  hosted_zone_id  = data.aws_route53_zone.root.zone_id
+  tags            = local.common_tags
 }
-
-
 # Azure Static Site Module
 
 module "azure_static_site" {

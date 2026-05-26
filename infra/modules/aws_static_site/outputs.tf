@@ -14,3 +14,9 @@ output "cloudfront_hosted_zone_id" {
   value = aws_cloudfront_distribution.site.hosted_zone_id
 }
 
+
+# Output the ARN of the IAM role for GitHub Actions deployment
+
+output "github_actions_role_arn" {
+  value = aws_iam_role.github_actions_deploy.arn
+}

@@ -43,3 +43,8 @@ output "aws_bucket_name" {
   value = module.aws_static_site.bucket_name
 }
 
+
+
+output "aws_github_actions_role_arn" {
+  value = module.aws_static_site.github_actions_role_arn
+}

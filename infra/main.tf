@@ -29,3 +29,27 @@ module "azure_static_site" {
 
   tags = local.common_tags
 }
+
+
+
+# Route 53 Failover Module
+
+
+module "route53_failover" {
+  source = "./modules/route53_failover"
+
+  hosted_zone_id  = data.aws_route53_zone.root.zone_id
+  app_domain_name = var.app_domain_name
+
+  primary_dns_name = module.aws_static_site.cloudfront_domain_name
+
+  secondary_dns_name = trimsuffix(
+    replace(module.azure_static_site.static_website_url, "https://", ""),
+    "/"
+  )
+
+  health_check_fqdn = module.aws_static_site.cloudfront_domain_name
+  health_check_path = "/"
+
+  tags = local.common_tags
+}

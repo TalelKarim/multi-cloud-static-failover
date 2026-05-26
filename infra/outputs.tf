@@ -48,3 +48,16 @@ output "aws_bucket_name" {
 output "aws_github_actions_role_arn" {
   value = module.aws_static_site.github_actions_role_arn
 }
+
+
+
+
+# Route 53 Failover Outputs
+
+output "route53_failover_fqdn" {
+  value = module.route53_failover.failover_fqdn
+}
+
+output "route53_primary_health_check_id" {
+  value = module.route53_failover.health_check_id
+}

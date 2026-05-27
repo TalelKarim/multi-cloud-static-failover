@@ -22,3 +22,7 @@ terraform.tfvars
 # Build outputs
 dist/
 node_modules/
+
+
+
+test.sh

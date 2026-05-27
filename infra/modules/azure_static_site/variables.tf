@@ -13,3 +13,8 @@ variable "azure_location" {
 variable "tags" {
   type = map(string)
 }
+
+variable "custom_domain_name" {
+  type        = string
+  description = "Custom domain used by Azure Front Door."
+}

@@ -46,3 +46,5 @@ resource "aws_route53_record" "secondary" {
     var.secondary_dns_name
   ]
 }
+
+

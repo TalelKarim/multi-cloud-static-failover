@@ -6,4 +6,9 @@ locals {
     "-",
     ""
   )
+
+  storage_static_website_host = trimsuffix(
+    replace(azurerm_storage_account.this.primary_web_endpoint, "https://", ""),
+    "/"
+  )
 }

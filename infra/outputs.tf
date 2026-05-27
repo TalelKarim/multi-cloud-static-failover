@@ -61,3 +61,13 @@ output "route53_failover_fqdn" {
 output "route53_primary_health_check_id" {
   value = module.route53_failover.health_check_id
 }
+
+# Azure Front Door Outputs
+
+output "azure_frontdoor_endpoint_host_name" {
+  value = module.azure_static_site.frontdoor_endpoint_host_name
+}
+
+output "azure_frontdoor_url" {
+  value = module.azure_static_site.frontdoor_url
+}

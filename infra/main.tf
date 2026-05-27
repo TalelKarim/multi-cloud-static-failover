@@ -28,9 +28,10 @@ module "aws_static_site" {
 module "azure_static_site" {
   source = "./modules/azure_static_site"
 
-  project_name   = var.project_name
-  environment    = var.environment
-  azure_location = var.azure_location
+  project_name       = var.project_name
+  environment        = var.environment
+  azure_location     = var.azure_location
+  custom_domain_name = var.app_domain_name
 
   tags = local.common_tags
 }
@@ -48,13 +49,28 @@ module "route53_failover" {
 
   primary_dns_name = module.aws_static_site.cloudfront_domain_name
 
-  secondary_dns_name = trimsuffix(
-    replace(module.azure_static_site.static_website_url, "https://", ""),
-    "/"
-  )
+  secondary_dns_name = module.azure_static_site.frontdoor_endpoint_host_name
 
   health_check_fqdn = module.aws_static_site.cloudfront_domain_name
   health_check_path = "/"
 
   tags = local.common_tags
+
+  depends_on = [
+    aws_route53_record.azure_frontdoor_custom_domain_validation
+  ]
+}
+
+
+
+# Validation record for Azure Front Door custom domain
+resource "aws_route53_record" "azure_frontdoor_custom_domain_validation" {
+  zone_id = data.aws_route53_zone.root.zone_id
+  name    = "_dnsauth.${var.app_domain_name}"
+  type    = "TXT"
+  ttl     = 60
+
+  records = [
+    module.azure_static_site.frontdoor_custom_domain_validation_token
+  ]
 }

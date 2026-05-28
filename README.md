@@ -18,3 +18,4 @@ User → Route 53 Failover → AWS CloudFront/S3 primary or Azure Front Door/Sto
 # multi-cloud-static-failover
 
 
+![alt text](multi-cloud-failover.png)

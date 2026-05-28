@@ -14,7 +14,6 @@ User → Route 53 Failover → AWS CloudFront/S3 primary or Azure Front Door/Sto
 - `infra/modules/azure_static_site/` - Azure secondary hosting
 - `infra/modules/route53_failover/` - Route 53 DNS failover
 - `.github/workflows/` - CI/CD workflows
-- `docs/` - architecture and design documentation
 # multi-cloud-static-failover
 
 
